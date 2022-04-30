@@ -1,0 +1,32 @@
+// Strings
+const myVariable = "test string value";
+
+// String Methods
+
+// number of char stating from index 0
+console.log(myVariable.length);
+
+// character at postion n
+console.log(myVariable.charAt(5));
+
+// first occurence of character(s)
+console.log(myVariable.indexOf("string"));
+
+// last occurence of character(s)
+console.log(myVariable.lastIndexOf("a"));
+
+// slice = substring but using start position and end position (not length)
+console.log(myVariable.slice(3, 8));
+// slice with no end position will use the end of string
+console.log(myVariable.slice(5));
+
+// uppercase
+console.log(myVariable.toUpperCase());
+// lowercase
+console.log(myVariable.toLowerCase());
+// includes = boolean check
+console.log(myVariable.includes("test"));
+// split string where value provided occurs - result is in array
+console.log(myVariable.split("st"));
+// split using empty quote will split every character
+console.log(myVariable.split(""));

@@ -1,0 +1,30 @@
+function isLeap(year) {
+    
+/**************Don't change the code above****************/    
+    
+    //Write your code here.    
+    var a = year % 4;
+    var b = year % 100;
+    var c = year % 400;
+
+    if(a !== 0) {
+        alert('Not leap year.');
+    } else {
+        if (b === 0) {
+            if(c === 0) {
+                alert('Leap year.');
+            } else {
+                alert('Not leap year.');
+            }
+        } else {
+           alert('Leap year.') ;
+        }
+    } 
+
+    
+
+/**************Don't change the code below****************/    
+
+}
+
+isLeap(1948);

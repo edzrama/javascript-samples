@@ -1,0 +1,13 @@
+/// Conditionals : Ternary Operator
+
+// Syntax : condition ? ifTrue : ifFalse
+
+let myName = "Slim Shady";
+let myName2;
+let isMyNameDefined = myName ? "Yep, Your Name is " + myName : "No, you don't have a Name";
+let areYouBob = true;
+console.log(isMyNameDefined);
+
+// chained ternary condition
+isMyNameDefined = myName2 ? "Yep, Your Name is " + myName : areYouBob ? "Welcome Bob" : "No, you're not Bob";
+console.log(isMyNameDefined);

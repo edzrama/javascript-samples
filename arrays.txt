@@ -1,0 +1,79 @@
+const myArray = [];
+const myArray2 = ["Haiyaa!", 1234, true];
+
+//add elements to an myArray
+myArray[0] = "Edz";
+myArray[1] = 1001;
+myArray[2] = false;
+
+myArray.push("school");
+// refer to an myArray
+console.log(myArray);
+
+// length property
+console.log(myArray.length);
+
+// last element in myArray
+console.log(myArray[myArray.length - 1]);
+// pop - remove last item from array
+const lastItem = myArray.pop();
+console.log(lastItem);
+
+// place new record in the beginning of array / newLength = length of array
+const newLength = myArray.unshift(42);
+console.log(newLength);
+//remove firstItem in the array / firstItem will be equal to the deleted firstItem
+const firstItem = myArray.shift();
+console.log("firstItem = : " + firstItem);
+console.log(myArray);
+
+// this empty the position, leaving it undefined, does not shift the position
+// delete myArray([1]);
+
+// delete array item by position
+myArray.splice(1,1);
+
+// replace item in position
+myArray.splice(1,1, 35);
+
+// insert item in array position
+myArray.splice(1,0, "Budoy");
+console.log(myArray);
+
+// slice array from position 1 to position 2 (position 2 is not included)
+const newArray = myArray.slice(1,2);
+console.log(newArray);
+
+// reverse order
+myArray.reverse();
+console.log(myArray);
+
+// combine items in array to a single string
+const newString = myArray.join();
+console.log(newString);
+
+// split string to array
+const newArray2 = newString.split(",");
+console.log(newArray2);
+
+// concat array to a new array
+// const combinedArray = myArray.concat(myArray2);
+// alternatively, use spread
+const combinedArray = [...myArray, ...myArray2];
+console.log(combinedArray);
+
+
+const equipShelfA = ["baseball", "football", "volleyball"];
+const equipShelfb = ["basketball", "golf balls", "tennis balls"];
+
+const clothesShelfA = ["tank tops", "t-shirts", "jerseys"];
+const clothesShelfB = ["sweat tops", "sweat pants", "hoodies"];
+// multidimensional array
+const equipDept = [equipShelfA, equipShelfb];
+const clothesDept = [clothesShelfA, clothesShelfB];
+const sportsStore = [equipDept, clothesDept];
+console.log(equipDept[0][1]);
+console.log(clothesDept[1][0]);
+
+console.log(sportsStore[0][0][1]);
+console.log(sportsStore[1][1][0]);

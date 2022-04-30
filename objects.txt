@@ -1,0 +1,93 @@
+// Objects
+const myObj = { name: "Edz"};
+console.log(myObj.name);
+
+const anotherObj = {
+    alive: true,
+    answer: 42,
+    hobbies: ["Eat", "Sleep", "Repeats"],
+    beverage : {
+        morning: "Coffee",
+        afternoon: "Iced Tea"
+    },
+    // method
+    action : function() {
+        // return "Hellow World!"
+        return 'Time for ' + this.beverage.morning;
+    }
+}
+
+// console.log(anotherObj.alive);
+// alternative
+console.log(anotherObj["alive"]);
+// accessing array
+console.log(anotherObj.hobbies[1]);
+// accessing obj
+console.log(anotherObj.beverage.afternoon);
+// call method inside the obj
+console.log(anotherObj.action());
+
+const vehicle = {
+    wheels : 4,
+    engine: function() {
+        return "Vrooommmm!";
+    }
+}
+//  use vehicle as constructor
+const truck = Object.create(vehicle);
+
+truck.doors = 2;
+// truck inherits properties/methods of vehicle
+console.log(truck);
+console.log("truck wheels: " +truck.wheels);
+console.log("truck engine : " + truck.engine());
+
+const car = Object.create(vehicle);
+car.doors = 4;
+// overrides inherited method
+car.engine = function () {
+    return "VAVAVrooommmm";
+}
+console.log("car engine : " + car.engine());
+console.log("car wheels : " + car.wheels);
+
+const tesla = Object.create(car);
+console.log("tesla wheels : " + tesla.wheels);
+tesla.engine = function() {
+    return "Shhhhhhh";
+}
+console.log("tesla engine : " + tesla.engine());
+
+const band = {
+    vocals: "Robert Plant",
+    guitar: "Jimmy Page",
+    bass: "John Paul Jones",
+    drums: "John Bonham"
+};
+
+// log object keys
+console.log(Object.keys(band));
+// log object values
+console.log(Object.values(band));
+// delete obj property
+// delete band.drums;
+// check property
+// console.log("is drum exist? " + band.hasOwnProperty("drums"));
+
+for(let job in band) {
+    console.log('On '+ job + ', it is '+ band[job]+ '!');
+}
+
+//  destructuring object
+// const { guitar: myVariable, bass: myBass } = band;
+// console.log(myVariable);
+// console.log(myBass);
+// alternative short-hand same name
+const { vocals, guitar, bass, drums } = band;
+console.log(vocals);
+console.log(drums);
+
+function sings({ vocals}) {
+    return vocals + " sings!"
+}
+console.log(sings(band));

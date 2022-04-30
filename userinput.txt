@@ -1,0 +1,11 @@
+// User Input
+// OK/Cancel popup
+let myBoolean = confirm("OK === True\nCancel === False");
+console.log(myBoolean);
+// Input
+let name = prompt("Please Enter your name");
+//nullish coalescing operator 
+//  if left hand is null, return right hand value
+//console.log(name ?? "You didn't enter any name");
+
+console.log(name ? name : "You didn't enter your name");

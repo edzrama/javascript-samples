@@ -1,0 +1,71 @@
+// Factory Function
+function pizzaFactory(pizzaSize) {
+    const crust = "original";
+    const size = pizzaSize;
+    return {
+        bake: () => console.log("Baking a "+ size + " " + crust + " crust pizza.")
+    }
+}
+
+const myPizzaF = pizzaFactory("small");
+myPizzaF.bake();
+
+// Javascript Classes
+class Pizza {
+    constructor (pizzaType, pizzaSize) {
+        this._type= pizzaType;
+        this._size = pizzaSize;
+        this._crust = "original";
+        this._toppings = [];
+    }
+    // get pizzaCrust() {
+    //     return this.crust;
+    // }
+    // set pizzaCrust(pizzaCrust) {
+    //     this.crust = pizzaCrust;
+    // }
+    // altenative : use method
+    getCrust() {
+        return this._crust;
+    }
+    setCrust(pizzaCrust) {
+        this._crust = pizzaCrust;
+    }
+    getToppings() {
+        return this._toppings
+    }
+    setToppings(pizzaToppings) {
+        this._toppings.push(pizzaToppings);
+    }
+    bake() {
+        console.log('Baking a ' + this._size + " " + this._type + " " +this._crust +  " crust pizza.")
+    }
+}
+
+
+const myPizza = new Pizza("pepperoni", "large");
+// myPizza.pizzaCrust = "thin";
+myPizza.setCrust("thin");
+myPizza.setToppings("sausage");
+myPizza.setToppings("olives");
+// no advisable
+// myPizza.type = "supreme";
+myPizza.bake();
+// console.log(myPizza.pizzaCrust);
+console.log(myPizza.getCrust());
+console.log(myPizza.getToppings());
+
+// child class 
+class SpecialtyPizza extends Pizza {
+    constructor(pizzaType, pizzaSize) {
+        // super calls the parent constructor
+        super(pizzaType, pizzaSize);
+        
+    }
+    slice() {
+        console.log("Our " + this._type + " " + this._size +" pizza has 8 slices");
+    }
+}
+
+const mySpecialty = new SpecialtyPizza("supreme", "medium");
+mySpecialty.slice();
